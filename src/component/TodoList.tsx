@@ -14,6 +14,7 @@ const TodoList: React.FC = () => {
       initial={{height: 0}}
       animate={{height: 'auto'}}
       exit={{height: 0}}
+      transition={{duration: 1}}
       className='todos'>
         {todos.map((todo) => (
           <TodoItem key={todo.id} {...todo} />
