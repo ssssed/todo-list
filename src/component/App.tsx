@@ -17,7 +17,8 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className='App'>
+    <div className='page'>
+      <h1 className="page__title">todos</h1>
       <TodoForm value={text} handleTextChange={setText} addTask={addTask} />
       <TodoList />
     </div>

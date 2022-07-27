@@ -1,0 +1,19 @@
+.todo {
+    display: flex;
+    width: 400px;
+    margin: 0 auto;
+    gap: 10px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    align-items: center;
+    background-color: #ffffff;
+
+     &__delete {
+        margin: 0 0 0 auto;
+        color: red;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+     }   
+}

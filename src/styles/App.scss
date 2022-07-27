@@ -1,4 +1,4 @@
-.App {
+.page {
     text-align: center;
 }
 
@@ -15,6 +15,7 @@ li {
 
 input:checked + span {
     text-decoration: line-through;
+    color: #e4e4e4;
 }
 
 span:last-child {

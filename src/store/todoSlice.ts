@@ -9,11 +9,13 @@ interface Todo {
 interface TodosState {
     list: Todo[];
     id: number;
+    isVisible: boolean;
 }
 
 const initialState: TodosState = {
     list: [],
     id: 0,
+    isVisible: true,
 }
 
 const todoSlice = createSlice({
@@ -34,9 +36,12 @@ const todoSlice = createSlice({
       const todo = state.list.find(item => item.id === action.payload);
       todo.completed = !todo.completed;
     },
+    toggleOpenTodoList(state, action: PayloadAction<boolean>) {
+      state.isVisible = action.payload;
+    }
   },
 });
 
-export const { addTodo, removeTodo, toggleTodoCompite } = todoSlice.actions;
+export const { addTodo, removeTodo, toggleTodoCompite, toggleOpenTodoList } = todoSlice.actions;
 
 export default todoSlice.reducer;

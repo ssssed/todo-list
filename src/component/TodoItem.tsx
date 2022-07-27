@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppDispatch } from "../hook";
 import { removeTodo, toggleTodoCompite } from "../store/todoSlice";
-
+import '../styles/todoItem.scss';
 interface TodoItemProps {
     id: number,
     completed: boolean,
@@ -13,10 +13,10 @@ const TodoItem: React.FC<TodoItemProps> = ({id, completed, title}) => {
     const handleRemoveTodo = () => dispatch(removeTodo(id))
     const handleToggleComplite = () => dispatch(toggleTodoCompite(id))
     return (
-        <li>
+        <li className="todo">
             <input type="checkbox" checked={completed} onChange={handleToggleComplite} />
-            <span>{title}</span>
-            <span onClick={handleRemoveTodo}>&times;</span>
+            <span className="todo__title" >{title}</span>
+            <button className="todo__delete" onClick={handleRemoveTodo}>&times;</button>
         </li>
     )
 }
