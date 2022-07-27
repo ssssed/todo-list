@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { useAppSelector } from '../hook';
 import TodoItem from './TodoItem';
 import '../styles/todoList.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const TodoList: React.FC = () => {
+const TodoList: React.FC = memo(() => {
   const todos = useAppSelector((state) => state.todo.list);
   const isVisible = useAppSelector(state => state.todo.isVisible);
   
@@ -22,6 +22,6 @@ const TodoList: React.FC = () => {
       </motion.ul>)}
     </AnimatePresence>
   );
-};
+});
 
 export default TodoList;

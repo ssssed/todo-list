@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useAppDispatch } from "../hook";
 import { removeTodo, toggleTodoCompite } from "../store/todoSlice";
 import '../styles/todoItem.scss';
@@ -8,7 +8,7 @@ interface TodoItemProps {
     title: string,
 }
 
-const TodoItem: React.FC<TodoItemProps> = ({id, completed, title}) => {
+const TodoItem: React.FC<TodoItemProps> = memo(({id, completed, title}) => {
     const dispatch = useAppDispatch();
     const handleRemoveTodo = () => dispatch(removeTodo(id))
     const handleToggleComplite = () => dispatch(toggleTodoCompite(id))
@@ -19,6 +19,6 @@ const TodoItem: React.FC<TodoItemProps> = ({id, completed, title}) => {
             <button className="todo__delete" onClick={handleRemoveTodo}>&times;</button>
         </li>
     )
-}
+})
 
 export default TodoItem;
