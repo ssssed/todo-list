@@ -12,7 +12,7 @@
 </script>
 
 <div class="todos">
-  {#if $todoList.filter(el => !el.status).length === 0}
+  {#if $todoList.length > 0 && $todoList.filter(el => !el.status).length === 0}
     <h5>Добавьте себе новое дело</h5>
   {/if}
   {#each $todoList.filter(el => !el.status) as todo (todo.id)}
