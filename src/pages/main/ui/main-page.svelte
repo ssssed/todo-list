@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { AddTodo } from '~/features/add-todo';
+  import { TodoForm } from '~/widgets/todo-form';
 </script>
 
 <main>
   <h1>Hello world</h1>
-  <AddTodo />
+  <TodoForm />
 </main>

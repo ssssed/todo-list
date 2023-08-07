@@ -18,9 +18,12 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  flex: 1 0 auto;
+}
+
+main {
+  width: 100%;
 }
 
 #app {
