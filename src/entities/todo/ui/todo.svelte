@@ -1,13 +1,13 @@
 <script lang="ts">
-  import Input from '~/shared/ui/input/ui/input.svelte';
-
   export let checked: boolean = false;
   export let text: string = '';
   export let id: number | bigint = Date.now();
+  export let onChange: Function;
   console.log(text, id);
 
   const handleCheckedChange = () => {
     checked = !checked;
+    onChange(id);
   };
 </script>
 
